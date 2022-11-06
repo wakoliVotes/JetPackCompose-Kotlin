@@ -81,7 +81,7 @@ class MainActivity : ComponentActivity() {
                 }
                 },
                 label = {
-                    Text(text = "Name:")
+                    Text(text = "Name")
                 },
                 singleLine = true,
                 leadingIcon = {
@@ -142,7 +142,7 @@ class MainActivity : ComponentActivity() {
                 }
                 },
                 label = {
-                    Text(text = "Confirm Password")
+                    Text(text = "Password")
                 },
                 singleLine = true,
                 leadingIcon = {
@@ -202,7 +202,7 @@ class MainActivity : ComponentActivity() {
             )
             Spacer(modifier = Modifier.padding(10.dp))
             // Created Button Called Here
-            GradientButton(text = "Register", textColor = Color.White, gradient = Brush.horizontalGradient(
+            GradientButton(text = "Sign Up", textColor = Color.White, gradient = Brush.horizontalGradient(
                 colors = listOf(
                     Purple700, Purple500
                 )
@@ -210,7 +210,7 @@ class MainActivity : ComponentActivity() {
 
             Spacer(modifier = Modifier.padding(20.dp))
             // Already have an account Call
-            OutlinedTextField(value = "Already have an Account? Sign in", onValueChange = {""})
+            OutlinedTextField(value = "Already have an Account?", onValueChange = {""})
 
             Spacer(modifier = Modifier.padding(5.dp))
 
