@@ -25,9 +25,11 @@ import com.example.starbuckscoffeeui.R
 @Composable
 fun FoodDetailsSection() {
 //    Text(text = "Welcome to Starbucks Coffee")
-    MaterialTheme() {
-        Column() {
-            Box(){
+    MaterialTheme {
+        Column(
+            modifier = Modifier.padding(10.dp)
+        ) {
+            Box {
                 Row(
                     modifier =Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
@@ -35,7 +37,7 @@ fun FoodDetailsSection() {
                     Text(
                         text = "Food",
                         style = TextStyle(fontFamily = FontFamily.Monospace),
-                        fontSize = 19.sp
+                        fontSize = 19.sp,
                     )
 
 
@@ -55,14 +57,14 @@ fun FoodDetailsSection() {
                 )
                 {
                     Image(
-                        painter = painterResource(id = R.drawable.img),
+                        painter = painterResource(id = R.drawable.img_3),
                         contentDescription = "food one",
-                        Modifier.clip(RoundedCornerShape(topEnd = 8.dp, bottomEnd = 8.dp, bottomStart = 8.dp))
+                        Modifier.clip(RoundedCornerShape(8.dp))
                     )
                 }
-                Column() {
+                Column {
                     Text(
-                        text = "Honey BBQ Chicken",
+                        text = "Honey BBQ Sriracha Chicken",
                         style = TextStyle(fontFamily = FontFamily.Monospace)
                     )
                     Spacer(modifier = Modifier.height(5.dp))
@@ -77,12 +79,13 @@ fun FoodDetailsSection() {
                         Spacer(modifier = Modifier.width(15.dp))
                         Text(
                             text = "370 kcal",
-                            style = TextStyle(fontWeight = FontWeight.Bold)
+                            style = TextStyle(fontWeight = FontWeight.Bold),
+                            modifier = Modifier.padding(end = 150.dp)
 
                         )
                         Text(
                             modifier = Modifier.padding(end = 10.dp),
-                            text = "$13",
+                            text = "$28",
                             style = TextStyle(fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold)
                         )
 
@@ -90,6 +93,98 @@ fun FoodDetailsSection() {
 
                 }
                 
+            }
+            // Next Section
+            Spacer(Modifier.height(15.dp))
+            Row(horizontalArrangement = Arrangement.Absolute.SpaceBetween) {
+                Box(modifier = Modifier
+                    .height(50.dp)
+                    .width(70.dp)
+                )
+                {
+                    Image(
+                        painter = painterResource(id = R.drawable.img_4),
+                        contentDescription = "food one",
+                        Modifier.clip(RoundedCornerShape(8.dp))
+                    )
+                }
+                Column {
+                    Text(
+                        text = "PB&J Protein Box",
+                        style = TextStyle(fontFamily = FontFamily.Monospace)
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row (
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(
+                            text = "12 min",
+                            style = TextStyle(fontWeight = FontWeight.Bold)
+                        )
+                        Spacer(modifier = Modifier.width(15.dp))
+                        Text(
+                            text = "520 kcal",
+                            style = TextStyle(fontWeight = FontWeight.Bold),
+                            modifier = Modifier.padding(end = 150.dp)
+
+                        )
+                        Text(
+                            modifier = Modifier.padding(end = 10.dp),
+                            text = "$42",
+                            style = TextStyle(fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold)
+                        )
+
+                    }
+
+                }
+
+            }
+            // Last Section
+            Spacer(Modifier.height(15.dp))
+            Row(horizontalArrangement = Arrangement.Absolute.SpaceBetween) {
+                Box(modifier = Modifier
+                    .height(50.dp)
+                    .width(70.dp)
+                )
+                {
+                    Image(
+                        painter = painterResource(id = R.drawable.img),
+                        contentDescription = "food one",
+                        Modifier.clip(RoundedCornerShape(8.dp))
+                    )
+                }
+                Column {
+                    Text(
+                        text = "Sunrise Cappuccino",
+                        style = TextStyle(fontFamily = FontFamily.Monospace)
+                    )
+                    Spacer(modifier = Modifier.height(5.dp))
+                    Row (
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(
+                            text = "3 min",
+                            style = TextStyle(fontWeight = FontWeight.Bold)
+                        )
+                        Spacer(modifier = Modifier.width(15.dp))
+                        Text(
+                            text = "330 kcal",
+                            style = TextStyle(fontWeight = FontWeight.Bold),
+                            modifier = Modifier.padding(end = 150.dp)
+
+                        )
+                        Text(
+                            modifier = Modifier.padding(end = 10.dp),
+                            text = "$18",
+                            style = TextStyle(fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold)
+                        )
+
+                    }
+
+                }
+
             }
             
 
