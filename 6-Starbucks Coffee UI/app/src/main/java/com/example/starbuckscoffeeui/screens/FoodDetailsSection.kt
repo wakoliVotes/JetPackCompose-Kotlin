@@ -7,6 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -37,6 +38,7 @@ fun FoodDetailsSection() {
                     Text(
                         text = "Food",
                         style = TextStyle(fontFamily = FontFamily.Monospace),
+                        fontWeight = FontWeight.Bold,
                         fontSize = 19.sp,
                     )
 
@@ -45,6 +47,7 @@ fun FoodDetailsSection() {
                         text = "See  All",
                         style = TextStyle(fontSize = 13.sp),
                     modifier = Modifier.padding(top = 4.dp, end = 10.dp)
+                        .alpha(0.4f)
                     )
 
                 }

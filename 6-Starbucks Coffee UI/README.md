@@ -22,7 +22,8 @@
 - The design and implementation uses different files for Composable Functions for each section
 - Other implementation designs are possible, including having all UIs in one **Kotlin** file
 
-**Sample Previews[Pre Completion]***
+**Sample Previews[Pre Completion]**
+
 ![image](https://user-images.githubusercontent.com/77758884/204033655-86ace2f5-229e-4156-a4e9-544b82079bd0.png)
 
 
