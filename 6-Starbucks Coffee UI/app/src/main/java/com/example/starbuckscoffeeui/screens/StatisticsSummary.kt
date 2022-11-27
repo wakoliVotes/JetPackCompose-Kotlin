@@ -12,7 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun StatisticsSummary() {
-    Text(text = "Welcome to Starbucks Coffee")
+//    Text(text = "Welcome to Starbucks Coffee")
 }
 
 

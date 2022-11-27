@@ -83,11 +83,11 @@ fun FoodDetailsSection() {
                         Text(
                             text = "370 kcal",
                             style = TextStyle(fontWeight = FontWeight.Bold),
-                            modifier = Modifier.padding(end = 150.dp)
+                            modifier = Modifier.padding(end = 100.dp)
 
                         )
                         Text(
-                            modifier = Modifier.padding(end = 10.dp),
+                            modifier = Modifier.padding(end = 20.dp),
                             text = "$28",
                             style = TextStyle(fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold)
                         )
@@ -129,11 +129,11 @@ fun FoodDetailsSection() {
                         Text(
                             text = "520 kcal",
                             style = TextStyle(fontWeight = FontWeight.Bold),
-                            modifier = Modifier.padding(end = 150.dp)
+                            modifier = Modifier.padding(end = 100.dp)
 
                         )
                         Text(
-                            modifier = Modifier.padding(end = 10.dp),
+                            modifier = Modifier.padding(end = 20.dp),
                             text = "$42",
                             style = TextStyle(fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold)
                         )
@@ -175,11 +175,11 @@ fun FoodDetailsSection() {
                         Text(
                             text = "330 kcal",
                             style = TextStyle(fontWeight = FontWeight.Bold),
-                            modifier = Modifier.padding(end = 150.dp)
+                            modifier = Modifier.padding(end = 100.dp)
 
                         )
                         Text(
-                            modifier = Modifier.padding(end = 10.dp),
+                            modifier = Modifier.padding(end = 20.dp),
                             text = "$18",
                             style = TextStyle(fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold)
                         )
