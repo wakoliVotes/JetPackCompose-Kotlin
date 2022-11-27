@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -29,14 +30,19 @@ fun TitleBar() {
 //    Text(text = "Welcome to Starbucks Coffee")
     MaterialTheme {
         Row (
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 10.dp,top = 10.dp)
                 )
         {
             Text(
                 text = "Starbucks Coffee",
                 style = TextStyle(
                     fontFamily = FontFamily.Monospace,
-                    fontSize = 19.sp
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold
+
                 )
             )
             Box(
@@ -44,19 +50,18 @@ fun TitleBar() {
                     .width(45.dp)
                     .height(45.dp)
             ){
-                Box
+                Box()
                 {
                     Box(
                         modifier = Modifier
-                            .size(100.dp)
+                            .size(10.dp)
                             .clip(shape = CircleShape)
                             .background(Color.Red)
                     )
                     Image(
                         modifier = Modifier
                             .width(22.dp)
-                            .height(22.dp)
-                        ,
+                            .height(22.dp),
                         painter = painterResource(id = R.drawable.ic_outline_shopping_basket_24),
                         contentDescription = "Shopping Cart"
                     )
