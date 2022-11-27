@@ -2,6 +2,7 @@ package com.example.starbuckscoffeeui.screens
 
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
@@ -17,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.starbuckscoffeeui.R
-import java.util.Stack
 
 // Will hold all the views and composable functions
 // It will then be called in the MainActivity file
@@ -27,7 +27,7 @@ import java.util.Stack
 @Composable
 fun TitleBar() {
 //    Text(text = "Welcome to Starbucks Coffee")
-    MaterialTheme() {
+    MaterialTheme {
         Row (
             horizontalArrangement = Arrangement.SpaceBetween
                 )
@@ -44,14 +44,13 @@ fun TitleBar() {
                     .width(45.dp)
                     .height(45.dp)
             ){
-                Box()
+                Box
                 {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_outline_shopping_basket_24) ,
-                        contentDescription = "Shopping Cart",
-                        modifier = Modifier.clip(shape = CircleShape,
-                        color = Color(red = 32, green = 151, blue = 64)
-                        )
+                    Box(
+                        modifier = Modifier
+                            .size(100.dp)
+                            .clip(shape = CircleShape)
+                            .background(Color.Red)
                     )
                     Image(
                         modifier = Modifier
