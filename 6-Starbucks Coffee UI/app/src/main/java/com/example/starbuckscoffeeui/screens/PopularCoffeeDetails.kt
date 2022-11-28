@@ -59,21 +59,22 @@ fun PopularCoffee() {
             // Next Section with Image
             // Use Row
             Row(
+                horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier
                     .padding(start = 10.dp, bottom = 40.dp)
+                    .fillMaxWidth()
             ) {
                 Card(elevation = 10.dp, shape = RoundedCornerShape(8.dp)) {
-                    Box(modifier = Modifier.width(130.dp)) {
+                    Box(modifier = Modifier.width(140.dp)) {
                         Column {
                             Image(
                                 painter = painterResource(id = R.drawable.img_1),
                                 contentDescription = "Popular Coffee",
                                 modifier = Modifier
-                                    .padding(top = 0.dp)
                                     .height(180.dp)
-                                    .width(130.dp)
+                                    .width(140.dp)
                                     .clip(
-                                        shape = RoundedCornerShape(8.dp)
+                                        shape = RoundedCornerShape(18.dp)
                                     )
 
                             )
