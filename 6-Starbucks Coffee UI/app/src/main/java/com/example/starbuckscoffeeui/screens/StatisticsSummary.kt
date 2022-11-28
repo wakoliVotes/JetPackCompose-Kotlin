@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 
 // Will hold all the views and composable functions
@@ -28,193 +29,213 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun StatisticsSummary() {
     MaterialTheme() {
-        LazyRow(modifier = Modifier.fillMaxWidth()) {
-            item {
-                Row(modifier = Modifier
-                    .padding(start = 10.dp, top = 10.dp)
-                    .fillMaxWidth()) {
-                    Card(
-                        elevation = 10.dp,
-                        modifier = Modifier
-                            .clip(shape = RoundedCornerShape(8.dp))
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .height(60.dp)
-                                .width(120.dp)
-                                .background(color = Color(red = 32, green = 151, blue = 64))
-                        )
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 10.dp)
+        ) {
+            Text(
+                text = "Our Product Categories",
+                modifier = Modifier.padding(start = 10.dp),
+                style = TextStyle(
+                    fontFamily = FontFamily.Monospace,
+                    fontSize = 19.sp,
+                    fontWeight = FontWeight.Bold
 
-                        {
-                            Column(
-                                modifier = Modifier.padding(5.dp),
-                                horizontalAlignment = Alignment.Start
-                            ) {
-                                Text(
-                                    text = "99+",
-                                    style = TextStyle(
-                                        fontFamily = FontFamily.Monospace,
-                                        fontWeight = FontWeight.SemiBold,
-                                        color = Color.White
+                )
+            )
+
+
+            LazyRow(modifier = Modifier.fillMaxWidth()) {
+                item {
+                    Row(
+                        modifier = Modifier
+                            .padding(start = 10.dp, top = 10.dp)
+                            .fillMaxWidth()
+                    ) {
+                        Card(
+                            elevation = 10.dp,
+                            modifier = Modifier
+                                .clip(shape = RoundedCornerShape(8.dp))
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .height(60.dp)
+                                    .width(120.dp)
+                                    .background(color = Color(red = 32, green = 151, blue = 64))
+                            )
+
+                            {
+                                Column(
+                                    modifier = Modifier.padding(5.dp),
+                                    horizontalAlignment = Alignment.Start
+                                ) {
+                                    Text(
+                                        text = "99+",
+                                        style = TextStyle(
+                                            fontFamily = FontFamily.Monospace,
+                                            fontWeight = FontWeight.SemiBold,
+                                            color = Color.White
+                                        )
                                     )
-                                )
-                                Text(
-                                    text = "All Products",
-                                    style = TextStyle(
-                                        color = Color.White,
-                                        fontFamily = FontFamily.Monospace,
-                                        fontWeight = FontWeight.SemiBold
+                                    Text(
+                                        text = "All Products",
+                                        style = TextStyle(
+                                            color = Color.White,
+                                            fontFamily = FontFamily.Monospace,
+                                            fontWeight = FontWeight.SemiBold
+                                        )
                                     )
-                                )
+                                }
                             }
                         }
-                    }
-                    //Next Card
-                    Card(
-                        elevation = 10.dp,
-                        modifier = Modifier
-                            .padding(start = 10.dp, bottom = 10.dp)
-                            .alpha(0.30f)
-                            .clip(shape = RoundedCornerShape(8.dp))
-                    ) {
-                        Box(
+                        //Next Card
+                        Card(
+                            elevation = 10.dp,
                             modifier = Modifier
-                                .height(60.dp)
-                                .width(120.dp)
+                                .padding(start = 10.dp, bottom = 10.dp)
+                                .alpha(0.30f)
+                                .clip(shape = RoundedCornerShape(8.dp))
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .height(60.dp)
+                                    .width(120.dp)
 
-                        )
-                        {
-                            Column(modifier = Modifier.padding(5.dp)) {
-                                Text(
-                                    text = "23",
-                                    style = TextStyle(
-                                        fontWeight = FontWeight.Bold,
-                                        fontFamily = FontFamily.Monospace
+                            )
+                            {
+                                Column(modifier = Modifier.padding(5.dp)) {
+                                    Text(
+                                        text = "23",
+                                        style = TextStyle(
+                                            fontWeight = FontWeight.Bold,
+                                            fontFamily = FontFamily.Monospace
+                                        )
                                     )
-                                )
-                                Text(
-                                    text = "Food",
-                                    style = TextStyle(
-                                        fontWeight = FontWeight.SemiBold,
-                                        fontFamily = FontFamily.Monospace
+                                    Text(
+                                        text = "Food",
+                                        style = TextStyle(
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontFamily = FontFamily.Monospace
+                                        )
                                     )
-                                )
 
-                            }
-
-                        }
-
-
-                    }
-                    // Next card
-                    Card(
-                        elevation = 10.dp,
-                        modifier = Modifier
-                            .padding(start = 10.dp, bottom = 10.dp)
-                            .alpha(0.30f)
-                            .clip(shape = RoundedCornerShape(8.dp))
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .height(60.dp)
-                                .width(120.dp)
-                        )
-                        {
-                            Column(modifier = Modifier.padding(5.dp)) {
-                                Text(
-                                    text = "48",
-                                    style = TextStyle(
-                                        fontWeight = FontWeight.Bold,
-                                        fontFamily = FontFamily.Monospace
-                                    )
-                                )
-                                Text(
-                                    text = "Coffees",
-                                    style = TextStyle(
-                                        fontWeight = FontWeight.SemiBold,
-                                        fontFamily = FontFamily.Monospace
-                                    )
-                                )
+                                }
 
                             }
 
+
                         }
-
-
-                    }
-                    // Next card
-                    Card(
-                        elevation = 10.dp,
-                        modifier = Modifier
-                            .padding(start = 10.dp, bottom = 10.dp)
-                            .alpha(0.30f)
-                            .clip(shape = RoundedCornerShape(8.dp))
-                    ) {
-                        Box(
+                        // Next card
+                        Card(
+                            elevation = 10.dp,
                             modifier = Modifier
-                                .height(60.dp)
-                                .width(120.dp)
-                        )
-                        {
-                            Column(modifier = Modifier.padding(5.dp)) {
-                                Text(
-                                    text = "14",
-                                    style = TextStyle(
-                                        fontWeight = FontWeight.Bold,
-                                        fontFamily = FontFamily.Monospace
+                                .padding(start = 10.dp, bottom = 10.dp)
+                                .alpha(0.30f)
+                                .clip(shape = RoundedCornerShape(8.dp))
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .height(60.dp)
+                                    .width(120.dp)
+                            )
+                            {
+                                Column(modifier = Modifier.padding(5.dp)) {
+                                    Text(
+                                        text = "48",
+                                        style = TextStyle(
+                                            fontWeight = FontWeight.Bold,
+                                            fontFamily = FontFamily.Monospace
+                                        )
                                     )
-                                )
-                                Text(
-                                    text = "Teas",
-                                    style = TextStyle(
-                                        fontWeight = FontWeight.SemiBold,
-                                        fontFamily = FontFamily.Monospace
+                                    Text(
+                                        text = "Coffees",
+                                        style = TextStyle(
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontFamily = FontFamily.Monospace
+                                        )
                                     )
-                                )
+
+                                }
 
                             }
 
+
                         }
-
-
-                    }
-                    // Next card
-                    Card(
-                        elevation = 10.dp,
-                        modifier = Modifier
-                            .padding(start = 10.dp, bottom = 10.dp)
-                            .alpha(0.30f)
-                            .clip(shape = RoundedCornerShape(8.dp))
-                    ) {
-                        Box(
+                        // Next card
+                        Card(
+                            elevation = 10.dp,
                             modifier = Modifier
-                                .height(60.dp)
-                                .width(120.dp)
-                        )
-                        {
-                            Column(modifier = Modifier.padding(5.dp)) {
-                                Text(
-                                    text = "52",
-                                    style = TextStyle(
-                                        fontWeight = FontWeight.Bold,
-                                        fontFamily = FontFamily.Monospace
+                                .padding(start = 10.dp, bottom = 10.dp)
+                                .alpha(0.30f)
+                                .clip(shape = RoundedCornerShape(8.dp))
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .height(60.dp)
+                                    .width(120.dp)
+                            )
+                            {
+                                Column(modifier = Modifier.padding(5.dp)) {
+                                    Text(
+                                        text = "14",
+                                        style = TextStyle(
+                                            fontWeight = FontWeight.Bold,
+                                            fontFamily = FontFamily.Monospace
+                                        )
                                     )
-                                )
-                                Text(
-                                    text = "Creamers",
-                                    style = TextStyle(
-                                        fontWeight = FontWeight.SemiBold,
-                                        fontFamily = FontFamily.Monospace
+                                    Text(
+                                        text = "Teas",
+                                        style = TextStyle(
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontFamily = FontFamily.Monospace
+                                        )
                                     )
-                                )
+
+                                }
 
                             }
 
+
+                        }
+                        // Next card
+                        Card(
+                            elevation = 10.dp,
+                            modifier = Modifier
+                                .padding(start = 10.dp, bottom = 10.dp)
+                                .alpha(0.30f)
+                                .clip(shape = RoundedCornerShape(8.dp))
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .height(60.dp)
+                                    .width(120.dp)
+                            )
+                            {
+                                Column(modifier = Modifier.padding(5.dp)) {
+                                    Text(
+                                        text = "52",
+                                        style = TextStyle(
+                                            fontWeight = FontWeight.Bold,
+                                            fontFamily = FontFamily.Monospace
+                                        )
+                                    )
+                                    Text(
+                                        text = "Creamers",
+                                        style = TextStyle(
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontFamily = FontFamily.Monospace
+                                        )
+                                    )
+
+                                }
+
+                            }
+
+
                         }
 
-
                     }
-
                 }
             }
         }

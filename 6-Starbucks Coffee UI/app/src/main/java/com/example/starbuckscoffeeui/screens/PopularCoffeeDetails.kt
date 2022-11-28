@@ -91,7 +91,7 @@ fun PopularCoffee() {
                                 )
                                 // Next Text
                                 Text(
-                                    text = "Calories - 200",
+                                    text = "Calories - 35",
                                     style = TextStyle(
                                         fontSize = 12.sp,
                                         fontWeight = FontWeight.Bold,
@@ -171,7 +171,7 @@ fun PopularCoffee() {
                             // Column for next items under image
                             Column(modifier = Modifier.padding(5.dp)) {
                                 Text(
-                                    text = "Cold Brew",
+                                    text = "Vanilla Sweet",
                                     style = TextStyle(
                                         fontWeight = FontWeight.Bold,
                                         fontFamily = FontFamily.Monospace
@@ -182,7 +182,7 @@ fun PopularCoffee() {
                                 )
                                 // Next Text
                                 Text(
-                                    text = "Calories - 230",
+                                    text = "Calories - 110",
                                     style = TextStyle(
                                         fontSize = 12.sp,
                                         fontWeight = FontWeight.Bold,
