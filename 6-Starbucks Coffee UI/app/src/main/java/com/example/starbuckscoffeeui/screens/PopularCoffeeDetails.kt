@@ -26,10 +26,8 @@ import com.example.starbuckscoffeeui.R
 // It will then be called in the MainActivity file
 
 
-
 @Composable
 fun PopularCoffee() {
-        // Text(text = "Welcome to Starbucks Coffee")
     MaterialTheme {
         Column {
             Box(
@@ -113,9 +111,9 @@ fun PopularCoffee() {
 
                                 }
                                 // Spacing
-//                                Spacer(modifier = Modifier.height(10.dp))
+                                // Spacer(modifier = Modifier.height(10.dp))
                                 Row(
-                                    modifier = Modifier.fillMaxWidth() ,
+                                    modifier = Modifier.fillMaxWidth(),
                                     horizontalArrangement = Arrangement.SpaceBetween
                                 ) {
                                     Text(
@@ -128,7 +126,8 @@ fun PopularCoffee() {
                                         modifier = Modifier.alpha(0.87f)
                                     )
                                     Text(
-                                        modifier = Modifier.padding(end = 10.dp)
+                                        modifier = Modifier
+                                            .padding(end = 10.dp)
                                             .alpha(0.87f),
                                         text = "+",
                                         style = TextStyle(
@@ -164,7 +163,7 @@ fun PopularCoffee() {
                                     .height(160.dp)
                                     .width(130.dp)
                                     .clip(
-                                        shape = RoundedCornerShape(8.dp                                 )
+                                        shape = RoundedCornerShape(8.dp)
                                     )
 
                             )
@@ -205,7 +204,7 @@ fun PopularCoffee() {
                                 // Spacing
 //                                Spacer(modifier = Modifier.height(10.dp))
                                 Row(
-                                    modifier = Modifier.fillMaxWidth() ,
+                                    modifier = Modifier.fillMaxWidth(),
                                     horizontalArrangement = Arrangement.SpaceBetween
                                 ) {
                                     Text(
@@ -218,7 +217,8 @@ fun PopularCoffee() {
                                         modifier = Modifier.alpha(0.87f)
                                     )
                                     Text(
-                                        modifier = Modifier.padding(end = 15.dp)
+                                        modifier = Modifier
+                                            .padding(end = 15.dp)
                                             .alpha(0.87f),
                                         text = "+",
                                         style = TextStyle(
@@ -245,6 +245,6 @@ fun PopularCoffee() {
 
 @Composable
 @Preview
-fun PopularPreview(){
+fun PopularPreview() {
     PopularCoffee()
 }

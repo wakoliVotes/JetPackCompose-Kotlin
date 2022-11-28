@@ -13,25 +13,25 @@ import androidx.compose.ui.unit.dp
 // It will then be called in the MainActivity file
 
 
-
 @Composable
 fun AllHomeDashboard() {
-    Column (
+    Column(
         modifier = Modifier.padding(start = 10.dp, end = 10.dp)
-            ) {
+    ) {
         // calling all the other functions
         TitleBar()
-         StatisticsSummary()
+        StatisticsSummary()
         Spacer(modifier = Modifier.height(20.dp))
         PopularCoffee()
         FoodDetailsSection()
 
-        // VanillaSweetDetails()
-        
+        // TODO VanillaSweetDetails()
+
     }
 }
+
 @Composable
 @Preview
-fun HomePreview(){
+fun HomePreview() {
     AllHomeDashboard()
 }
