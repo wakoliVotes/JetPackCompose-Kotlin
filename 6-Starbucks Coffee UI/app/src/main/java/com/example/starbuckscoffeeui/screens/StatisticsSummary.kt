@@ -78,7 +78,7 @@ fun StatisticsSummary() {
                 ) {
                     Box(modifier = Modifier
                         .height(60.dp)
-                        .width(110.dp)
+                        .width(120.dp)
 
                     )
                     {
@@ -126,6 +126,74 @@ fun StatisticsSummary() {
                             )
                             Text(
                                 text = "Coffees",
+                                style = TextStyle(
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontFamily = FontFamily.Monospace
+                                )
+                            )
+
+                        }
+
+                    }
+
+
+                }
+                // Next card
+                Card(
+                    elevation = 10.dp,
+                    modifier = Modifier
+                        .padding(start = 10.dp, bottom = 10.dp)
+                        .alpha(0.30f)
+                        .clip(shape = RoundedCornerShape(8.dp))
+                ) {
+                    Box(modifier = Modifier
+                        .height(60.dp)
+                        .width(120.dp))
+                    {
+                        Column(modifier = Modifier.padding(5.dp),) {
+                            Text(
+                                text = "14",
+                                style = TextStyle(
+                                    fontWeight = FontWeight.Bold,
+                                    fontFamily = FontFamily.Monospace
+                                )
+                            )
+                            Text(
+                                text = "Teas",
+                                style = TextStyle(
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontFamily = FontFamily.Monospace
+                                )
+                            )
+
+                        }
+
+                    }
+
+
+                }
+                // Next card
+                Card(
+                    elevation = 10.dp,
+                    modifier = Modifier
+                        .padding(start = 10.dp, bottom = 10.dp)
+                        .alpha(0.30f)
+                        .clip(shape = RoundedCornerShape(8.dp))
+                ) {
+                    Box(modifier = Modifier
+                        .height(60.dp)
+                        .width(120.dp))
+                    {
+                        Column(modifier = Modifier.padding(5.dp),) {
+                            Text(
+                                text = "52",
+                                style = TextStyle(
+                                    fontWeight = FontWeight.Bold,
+                                    fontFamily = FontFamily.Monospace
+                                )
+                            )
+                            Text(
+                                text = "Creamers",
                                 style = TextStyle(
                                     fontWeight = FontWeight.SemiBold,
                                     fontFamily = FontFamily.Monospace
