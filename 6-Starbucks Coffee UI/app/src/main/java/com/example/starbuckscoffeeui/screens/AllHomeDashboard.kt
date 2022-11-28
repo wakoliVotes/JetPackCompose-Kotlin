@@ -19,7 +19,7 @@ fun AllHomeDashboard() {
             ) {
         // calling all the other functions
         TitleBar()
-        // StatisticsSummary()
+         StatisticsSummary()
         PopularCoffee()
         FoodDetailsSection()
 
