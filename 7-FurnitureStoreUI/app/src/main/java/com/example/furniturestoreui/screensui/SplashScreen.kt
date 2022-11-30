@@ -12,7 +12,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.example.furniturestoreui.R
+import com.example.furniturestoreui.navgraphroutes.RoutesSealed
 import com.example.furniturestoreui.utils.Constants
 import kotlinx.coroutines.delay
 
@@ -37,7 +39,7 @@ fun AppSplashScreen(navController: NavController) {
         )
         delay(Constants.SPLASH_SCREEN_DURATION)
         navController.popBackSatack()
-        navController.navigate(Screen.DashboadScreen.route)
+        navController.navigate(RoutesSealed.DashBoardUI.route)
     }
     Box(
         modifier = androidx.compose.ui.Modifier.fillMaxSize(),
