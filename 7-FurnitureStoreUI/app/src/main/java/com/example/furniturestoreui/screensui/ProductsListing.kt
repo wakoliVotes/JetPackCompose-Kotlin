@@ -19,12 +19,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.furniturestoreui.R
+import com.example.furniturestoreui.barcomponent.TopBarWithBackProductListing
 
 @Composable
 fun ProductListing(){
     Box(modifier = Modifier.verticalScroll(rememberScrollState())){
         Column() {
-            TopBarWithBackProductList(
+            TopBarWithBackProductListing(
                 title = "Armchairs",
                 onBackClick = {
 
