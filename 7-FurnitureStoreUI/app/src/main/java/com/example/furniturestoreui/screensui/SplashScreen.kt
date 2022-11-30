@@ -11,7 +11,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import com.example.furniturestoreui.R
 import com.example.furniturestoreui.navgraphroutes.RoutesSealed
@@ -52,19 +51,4 @@ fun AppSplashScreen(navController: NavController) {
         )
     }
 
-}
-
-
-
-
-
-
-
-
-
-
-@Composable
-@Preview
-fun PreviewSplash(){
-AppSplashScreen()
 }
