@@ -1,6 +1,5 @@
 package com.example.furniturestoreui.screensui
 
-import android.util.Log.d
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -19,7 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.furniturestoreui.R
-import com.example.furniturestoreui.barcomponent.TopBarWithBackProductListing
+import com.example.furniturestoreui.barcomponents.TopBarWithBackProductListing
 
 @Composable
 fun ProductListing(){

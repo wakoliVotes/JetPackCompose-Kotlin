@@ -27,7 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.furniturestoreui.R
-import com.example.furniturestoreui.barcomponent.TopBarWithBack
+import com.example.furniturestoreui.barcomponents.TopBarWithBack
 
 // TopBarWithBackProductList
 @Preview
