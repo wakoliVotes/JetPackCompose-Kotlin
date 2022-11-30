@@ -37,7 +37,7 @@ fun AppSplashScreen(navController: NavController) {
             )
         )
         delay(Constants.SPLASH_SCREEN_DURATION)
-        navController.popBackSatack()
+        navController.popBackStack()
         navController.navigate(RoutesSealed.DashBoardUI.route)
     }
     Box(

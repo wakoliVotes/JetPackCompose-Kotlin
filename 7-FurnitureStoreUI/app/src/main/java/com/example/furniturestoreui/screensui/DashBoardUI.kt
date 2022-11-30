@@ -243,21 +243,21 @@ fun CategoryBestOffers() {
             title = "Ingrit MV",
             subtitle = "Sofa",
             price = "$2699",
-            backgroundcolor = Color.Blue
+            backgroundcolor = Color.LightGray
         )
         CategoryBestOffersItems(
             imagePainter = painterResource(id = R.drawable.img_7),
             title = "Montesquieu",
             subtitle = "Bed",
             price = "$1499",
-            backgroundcolor = Color.Blue
+            backgroundcolor = Color.LightGray
         )
         CategoryBestOffersItems(
             imagePainter = painterResource(id = R.drawable.img_7),
             title = "Molina Sofa",
             subtitle = "Sofa",
             price = "$1299",
-            backgroundcolor = Color.Blue
+            backgroundcolor = Color.LightGray
         )
         
 
@@ -374,7 +374,7 @@ fun CategoryMore() {
 
         ) {
             Text(
-                text = "more",
+                text = "see more",
                 color = Color.White,
                 fontSize = 12.sp
             )

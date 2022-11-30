@@ -23,14 +23,14 @@ import com.example.furniturestoreui.barcomponents.TopBarWithBackProductListing
 @Composable
 fun ProductListing(){
     Box(modifier = Modifier.verticalScroll(rememberScrollState())){
-        Column() {
+        Column {
             TopBarWithBackProductListing(
                 title = "Armchairs",
                 onBackClick = {
 
                 },
             )
-            Column() {
+            Column {
                 ContentList()
 
             }
@@ -42,7 +42,7 @@ fun ProductListing(){
 
 @Composable
 fun ContentList(){
-    Column() {
+    Column {
         SortFilter()
         Spacer(modifier = Modifier.padding(24.dp))
         Products()
@@ -199,17 +199,17 @@ fun RightSide(){
     ) {
         RightItem(
             imagePainter = painterResource(id = R.drawable.img),
-            title = "Arraceli Armchair",
+            title = "Araceli Armchair",
             price = "$299.0"
         )
         RightItem(
             imagePainter = painterResource(id = R.drawable.img_1),
-            title = "Arraceli Armchair",
+            title = "Araceli Armchair",
             price = "$346.0"
         )
         RightItem(
             imagePainter = painterResource(id = R.drawable.img_2),
-            title = "Donham Armchair",
+            title = "Dunham Armchair",
             price = "$783.0"
         )
 
