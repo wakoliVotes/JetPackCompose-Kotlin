@@ -1,25 +1,25 @@
 package com.example.furniturestoreui.screensui
 
 
-import android.widget.Space
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -32,7 +32,7 @@ import com.example.furniturestoreui.R
 fun DashBoardUI() {
     val itemList = listOf("Chairs", "Sofa", "Beds", "Tables")
 
-    androidx.compose.material.Surface(
+    Surface(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.Green)
@@ -151,19 +151,240 @@ fun CategoryChairs(itemList: List<String>) {
         item {
             ChairsItem(
                 imagePainter = painterResource(id = R.drawable.img_1),
-                title = "Aracelli\n + " +
+                title = "Araceli\n + " +
                         "Armchair",
                 price = "$340"
             )
         }
         item {
             ChairsItem(
-                imagePainter = painterResource(id = R.drawable.img_2s),
+                imagePainter = painterResource(id = R.drawable.img_2),
                 title = "Primrose\n + " +
                         "Armchair",
                 price = "$340"
             )
         }
 
+    }
+}
+
+
+@Composable
+fun ChairsItem(
+    imagePainter: Painter,
+    title: String = "",
+    price: String = "",
+) {
+    Card(
+        modifier = Modifier
+            .width(200.dp)
+            .clickable {
+
+            },
+        elevation = 10.dp,
+        shape = RoundedCornerShape(20.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        )
+        {
+            Image(
+                painter = imagePainter,
+                contentDescription = "",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .aspectRatio(1f),
+                contentScale = ContentScale.Fit
+            )
+            Text(
+                text = title, color = Color.White
+            )
+            Text(
+                text = price, fontWeight = FontWeight.Bold
+            )
+        }
+    }
+}
+
+@Composable
+fun CategoryBestOffers() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = 16.dp)
+    ) {
+        Text(
+            text = buildAnnotatedString {
+                withStyle(
+                    style = SpanStyle(
+                        color = Color.DarkGray,
+                        fontWeight = FontWeight.Bold
+                    )
+                ) {
+                    append("Best")
+                }
+                withStyle(
+                    style = SpanStyle(
+                        color = Color.DarkGray
+                    )
+                ) {
+                    append("Offers")
+                }
+            },
+            style = MaterialTheme.typography.subtitle1,
+            modifier = Modifier,
+            fontSize = 24.sp
+        )
+
+        CategoryBestOffersItems(
+            imagePainter = painterResource(id = R.drawable.img_7),
+            title = "Ingrit MV",
+            subtitle = "Sofa",
+            price = "$2699",
+            backgroundcolor = Color.Blue
+        )
+        CategoryBestOffersItems(
+            imagePainter = painterResource(id = R.drawable.img_7),
+            title = "Montesquieu",
+            subtitle = "Bed",
+            price = "$1499",
+            backgroundcolor = Color.Blue
+        )
+        CategoryBestOffersItems(
+            imagePainter = painterResource(id = R.drawable.img_7),
+            title = "Molina Sofa",
+            subtitle = "Sofa",
+            price = "$1299",
+            backgroundcolor = Color.Blue
+        )
+        
+
+    }
+}
+
+@Composable
+fun CategoryBestOffersItems(
+    imagePainter: Painter,
+    title: String = "",
+    subtitle: String = "",
+    price: String = "",
+    backgroundcolor: Color = Color.Transparent,
+
+    ) {
+    Row(
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .padding(top = 24.dp)
+    )
+    {
+        Box(
+            modifier = Modifier
+                .height(90.dp)
+                .fillMaxWidth(0.2f)
+                .background(backgroundcolor),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                modifier = Modifier.padding(8.dp),
+                painter = imagePainter,
+                contentDescription = ""
+            )
+        }
+
+    }
+    Column(
+        verticalArrangement = Arrangement.SpaceEvenly,
+        horizontalAlignment = Alignment.Start,
+        modifier = Modifier
+            .offset((-60).dp)
+            .wrapContentHeight()
+    ) {
+        Text(
+            text = title,
+            fontWeight = FontWeight.Bold,
+            fontSize = 14.sp,
+            color = Color.Black
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+        Text(
+            text = subtitle,
+            fontSize = 12.sp,
+            color = Color.Gray
+        )
+    }
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxHeight()
+            .wrapContentHeight()
+    ) {
+
+        Text(
+            text = price,
+            fontWeight = FontWeight.Bold,
+            fontSize = 16.sp,
+            color = Color.Black,
+            textAlign = TextAlign.Center
+        )
+    }
+}
+
+
+@Composable
+fun CategoryMore() {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(
+            text = "New",
+            color = Color.DarkGray,
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Soon",
+            color = Color.White,
+            fontSize = 14.sp,
+            modifier = Modifier.offset((-60).dp)
+        )
+
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .height(70.dp)
+                .width(110.dp)
+                .offset((20).dp),
+            elevation = null,
+            shape = RoundedCornerShape(
+                topStartPercent = 50,
+            ),
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = Color.DarkGray
+            )
+
+        ) {
+            Text(
+                text = "more",
+                color = Color.White,
+                fontSize = 12.sp
+            )
+            Icon(
+                imageVector = Icons.Default.KeyboardArrowRight,
+                contentDescription = "",
+                modifier = Modifier.padding(start = 5.dp),
+                tint = Color.White
+            )
+
+        }
     }
 }

@@ -1,6 +1,5 @@
 package com.example.furniturestoreui.screensui
 
-import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -28,17 +27,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.furniturestoreui.R
+import com.example.furniturestoreui.barcomponent.TopBarWithBack
 
 // TopBarWithBackProductList
 @Preview
 @Composable
 fun ProductContentSection(){
     Box(modifier = Modifier.verticalScroll(rememberScrollState())){
-        Column() {
-            TopBarWithBack(
+        Column {
+         TopBarWithBack(
                 title = "Product",
                 onBackClick = {
-
                 },
             )
             Column {
@@ -53,7 +52,7 @@ fun ProductContentSection(){
 
 @Composable
 fun Content(){
-    Column() {
+    Column {
         ProductItemImage()
         ProductContent()
         ProductAbout()
@@ -72,7 +71,7 @@ fun ProductContent(){
             .fillMaxWidth()
             .padding(start = 16.dp)
     ) {
-        Column() {
+        Column {
             Text(
                 text = "Osmond Armchair",
                 fontWeight = FontWeight.Bold,
@@ -207,7 +206,7 @@ fun ProductAddtoCart(){
                 ){
             Card(
                 modifier = Modifier
-                    .offset(16.dp, (-40.dp))
+                    .offset(16.dp, ((-40).dp))
                     .fillMaxWidth()
                     .height(70.dp),
                 shape = RoundedCornerShape(20.dp)

@@ -1,6 +1,5 @@
 package com.example.furniturestoreui.screensui
 
-import android.provider.SyncStateContract.Constants
 import android.view.animation.OvershootInterpolator
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -14,8 +13,9 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.furniturestoreui.R
+import com.example.furniturestoreui.utils.Constants
 import kotlinx.coroutines.delay
-import java.lang.reflect.Modifier
+
 
 @Composable
 fun AppSplashScreen(navController: NavController) {
@@ -35,7 +35,7 @@ fun AppSplashScreen(navController: NavController) {
                 }
             )
         )
-        delay(Constants.SPLASH_SCREEN_DURA)
+        delay(Constants.SPLASH_SCREEN_DURATION)
         navController.popBackSatack()
         navController.navigate(Screen.DashboadScreen.route)
     }
