@@ -25,9 +25,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.furniturestoreui.R
+import com.example.furniturestoreui.ui.theme.*
 
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun DashBoardUI() {
     val itemList = listOf("Chairs", "Sofa", "Beds", "Tables")
@@ -35,7 +36,7 @@ fun DashBoardUI() {
     Surface(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.Green)
+            .background(cottonBall)
     ) {
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
             Spacer(modifier = Modifier.padding(5.dp))
@@ -64,7 +65,7 @@ fun Header() {
             text = buildAnnotatedString {
                 withStyle(
                     style = SpanStyle(
-                        color = Color.DarkGray,
+                        paledark,
                         fontWeight = FontWeight.Bold
                     )
                 ) {
@@ -72,7 +73,7 @@ fun Header() {
                 }
                 withStyle(
                     style = SpanStyle(
-                        color = Color.DarkGray
+                        paledark
                     )
                 ) {
                     append("Products")
@@ -112,7 +113,7 @@ fun CategoryChairs(itemList: List<String>) {
         items(itemList.size) { item ->
             Box(
                 modifier = Modifier.border(
-                    color = if (item == 0) Color.DarkGray else Color.Transparent,
+                    color = if (item == 0) paledark else Color.Transparent,
                     width = 2.dp,
                     shape = RoundedCornerShape(24.dp)
                 )
@@ -125,7 +126,7 @@ fun CategoryChairs(itemList: List<String>) {
                         bottom = 8.dp
                     ),
                     text = itemList[item],
-                    color = if (item == 0) Color.DarkGray else Color.Transparent
+                    color = if (item == 0) paledark else Color.LightGray
                 )
 
                 Spacer(modifier = Modifier.padding(8.dp))
@@ -133,6 +134,8 @@ fun CategoryChairs(itemList: List<String>) {
 
         }
     }
+    Spacer(modifier = Modifier.padding(10.dp))
+
     LazyRow(
         modifier = Modifier
             .fillMaxWidth()
@@ -143,25 +146,25 @@ fun CategoryChairs(itemList: List<String>) {
         item {
             ChairsItem(
                 imagePainter = painterResource(id = R.drawable.img),
-                title = "Matteo\n + " +
+                title = "Matteo\n " +
                         "Armchair",
-                price = "$340"
+                price = "$510"
             )
         }
         item {
             ChairsItem(
                 imagePainter = painterResource(id = R.drawable.img_1),
-                title = "Araceli\n + " +
+                title = "Araceli\n " +
                         "Armchair",
-                price = "$340"
+                price = "$360"
             )
         }
         item {
             ChairsItem(
                 imagePainter = painterResource(id = R.drawable.img_2),
-                title = "Primrose\n + " +
+                title = "Primrose\n " +
                         "Armchair",
-                price = "$340"
+                price = "$480"
             )
         }
 
@@ -179,6 +182,9 @@ fun ChairsItem(
         modifier = Modifier
             .width(200.dp)
             .clickable {
+
+
+
 
             },
         elevation = 10.dp,
@@ -199,7 +205,7 @@ fun ChairsItem(
                 contentScale = ContentScale.Fit
             )
             Text(
-                text = title, color = Color.White
+                text = title, color = texttitlewhite
             )
             Text(
                 text = price, fontWeight = FontWeight.Bold
@@ -219,7 +225,7 @@ fun CategoryBestOffers() {
             text = buildAnnotatedString {
                 withStyle(
                     style = SpanStyle(
-                        color = Color.DarkGray,
+                        color = paledark,
                         fontWeight = FontWeight.Bold
                     )
                 ) {
@@ -227,7 +233,7 @@ fun CategoryBestOffers() {
                 }
                 withStyle(
                     style = SpanStyle(
-                        color = Color.DarkGray
+                        color = paledark
                     )
                 ) {
                     append("Offers")
@@ -243,24 +249,22 @@ fun CategoryBestOffers() {
             title = "Ingrit MV",
             subtitle = "Sofa",
             price = "$2699",
-            backgroundcolor = Color.LightGray
+            backgroundcolor = lightBlue
         )
         CategoryBestOffersItems(
-            imagePainter = painterResource(id = R.drawable.img_7),
+            imagePainter = painterResource(id = R.drawable.img_8),
             title = "Montesquieu",
             subtitle = "Bed",
             price = "$1499",
-            backgroundcolor = Color.LightGray
+            backgroundcolor = lightBlue
         )
         CategoryBestOffersItems(
-            imagePainter = painterResource(id = R.drawable.img_7),
+            imagePainter = painterResource(id = R.drawable.img_9),
             title = "Molina Sofa",
             subtitle = "Sofa",
             price = "$1299",
-            backgroundcolor = Color.LightGray
+            backgroundcolor = lightBlue
         )
-        
-
     }
 }
 
@@ -296,7 +300,6 @@ fun CategoryBestOffersItems(
             )
         }
 
-    }
     Column(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.Start,
@@ -308,7 +311,7 @@ fun CategoryBestOffersItems(
             text = title,
             fontWeight = FontWeight.Bold,
             fontSize = 14.sp,
-            color = Color.Black
+            color = black
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
@@ -321,7 +324,7 @@ fun CategoryBestOffersItems(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .fillMaxHeight()
+            .fillMaxHeight(0.75f)
             .wrapContentHeight()
     ) {
 
@@ -330,9 +333,10 @@ fun CategoryBestOffersItems(
             fontWeight = FontWeight.Bold,
             fontSize = 16.sp,
             color = Color.Black,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Right
         )
     }
+}
 }
 
 
@@ -347,19 +351,21 @@ fun CategoryMore() {
     ) {
         Text(
             text = "New",
-            color = Color.DarkGray,
+            color = paledark,
             fontSize = 14.sp,
             fontWeight = FontWeight.Bold
         )
         Text(
             text = "Soon",
-            color = Color.White,
+            color = texttitlewhite,
             fontSize = 14.sp,
             modifier = Modifier.offset((-60).dp)
         )
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = {
+
+            },
             modifier = Modifier
                 .height(70.dp)
                 .width(110.dp)
@@ -369,20 +375,20 @@ fun CategoryMore() {
                 topStartPercent = 50,
             ),
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = Color.DarkGray
+                backgroundColor = paledark
             )
 
         ) {
             Text(
                 text = "see more",
-                color = Color.White,
+                color = white,
                 fontSize = 12.sp
             )
             Icon(
                 imageVector = Icons.Default.KeyboardArrowRight,
                 contentDescription = "",
                 modifier = Modifier.padding(start = 5.dp),
-                tint = Color.White
+                tint = white
             )
 
         }

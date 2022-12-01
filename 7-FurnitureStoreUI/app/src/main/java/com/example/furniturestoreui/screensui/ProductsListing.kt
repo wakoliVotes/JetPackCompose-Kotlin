@@ -16,10 +16,14 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.furniturestoreui.R
 import com.example.furniturestoreui.barcomponents.TopBarWithBackProductListing
+import com.example.furniturestoreui.ui.theme.white
 
+
+@Preview
 @Composable
 fun ProductListing(){
     Box(modifier = Modifier.verticalScroll(rememberScrollState())){
@@ -32,7 +36,6 @@ fun ProductListing(){
             )
             Column {
                 ContentList()
-
             }
 
         }
@@ -168,7 +171,7 @@ fun LeftItem(
             verticalArrangement = Arrangement.Bottom
         ) {
             Text(
-                text = title, color = Color.White
+                text = title, color = white
             )
             Text(text = price, fontWeight = FontWeight.Bold)
 
@@ -237,7 +240,7 @@ fun RightItem(
                 .padding(16.dp),
             verticalArrangement = Arrangement.Bottom
         ) {
-            Text(text = title, color = Color.White)
+            Text(text = title, color = white)
             Text(text = price, fontWeight = FontWeight.Bold)
         }
         Box(

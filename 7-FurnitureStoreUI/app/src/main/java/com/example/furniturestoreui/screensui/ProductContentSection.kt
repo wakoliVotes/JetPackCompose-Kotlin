@@ -28,6 +28,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.furniturestoreui.R
 import com.example.furniturestoreui.barcomponents.TopBarWithBack
+import com.example.furniturestoreui.ui.theme.paledark
+import com.example.furniturestoreui.ui.theme.white
 
 // TopBarWithBackProductList
 @Preview
@@ -76,12 +78,12 @@ fun ProductContent(){
                 text = "Osmond Armchair",
                 fontWeight = FontWeight.Bold,
                 fontSize = 16.sp,
-                color = Color.DarkGray,
+                color = paledark,
             )
             Text(
                 text = "Chair",
                 fontSize = 14.sp,
-                color = Color.White
+                color = white
             )
 
         }
@@ -99,7 +101,7 @@ fun ProductContent(){
                 Text(
                     text = "$346",
                     fontSize = 18.sp,
-                    color = Color.DarkGray,
+                    color = paledark,
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold
                 )
@@ -180,7 +182,7 @@ fun ProductAbout(){
                     "by awarded winning duo of Manchesti\n" +
                     "Bermadi and Fresco Duli brothers.",
             fontSize = 18.sp,
-            color = Color.White,
+            color = white,
             fontWeight = FontWeight.Bold
         )
 
@@ -218,7 +220,7 @@ fun ProductAddtoCart(){
                     Icon(
                         imageVector = Icons.Outlined.ShoppingCart,
                         contentDescription = "",
-                        tint = Color.White
+                        tint = white
                     )
                 }
             }
