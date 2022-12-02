@@ -173,12 +173,10 @@ fun LeftItem(
             verticalArrangement = Arrangement.Bottom
         ) {
             Text(
-                text = title, color = white
+                text = title, color = texttitlewhite
             )
             Text(text = price, fontWeight = FontWeight.Bold)
-
         }
-
     }
     Box(
         modifier = Modifier

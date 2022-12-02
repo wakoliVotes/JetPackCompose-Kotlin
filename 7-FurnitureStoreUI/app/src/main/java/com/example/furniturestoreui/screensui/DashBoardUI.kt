@@ -12,6 +12,7 @@ import androidx.compose.material.icons.outlined.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
@@ -31,7 +32,7 @@ import com.example.furniturestoreui.ui.theme.*
 @Preview(showBackground = true)
 @Composable
 fun DashBoardUI() {
-    val itemList = listOf("Chairs", "Sofa", "Beds", "Tables")
+    val itemList = listOf("Chairs", "Sofas", "Beds", "Tables")
 
     Surface(
         modifier = Modifier
@@ -182,10 +183,6 @@ fun ChairsItem(
         modifier = Modifier
             .width(200.dp)
             .clickable {
-
-
-
-
             },
         elevation = 10.dp,
         shape = RoundedCornerShape(20.dp)
@@ -260,7 +257,7 @@ fun CategoryBestOffers() {
         )
         CategoryBestOffersItems(
             imagePainter = painterResource(id = R.drawable.img_9),
-            title = "Molina Sofa",
+            title = "Nolan Sofa",
             subtitle = "Sofa",
             price = "$1299",
             backgroundcolor = lightBlue
@@ -289,7 +286,8 @@ fun CategoryBestOffersItems(
         Box(
             modifier = Modifier
                 .height(90.dp)
-                .fillMaxWidth(0.2f)
+                .fillMaxWidth(0.33f)
+                .clip(RoundedCornerShape(12.dp))
                 .background(backgroundcolor),
             contentAlignment = Alignment.Center
         ) {
@@ -299,44 +297,45 @@ fun CategoryBestOffersItems(
                 contentDescription = ""
             )
         }
+        Spacer(modifier = Modifier.width(5.dp))
 
-    Column(
-        verticalArrangement = Arrangement.SpaceEvenly,
-        horizontalAlignment = Alignment.Start,
-        modifier = Modifier
-            .offset((-60).dp)
-            .wrapContentHeight()
-    ) {
-        Text(
-            text = title,
-            fontWeight = FontWeight.Bold,
-            fontSize = 14.sp,
-            color = black
-        )
-        Spacer(modifier = Modifier.height(4.dp))
-        Text(
-            text = subtitle,
-            fontSize = 12.sp,
-            color = Color.Gray
-        )
-    }
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .fillMaxHeight(0.75f)
-            .wrapContentHeight()
-    ) {
+        Column(
+            verticalArrangement = Arrangement.SpaceEvenly,
+            horizontalAlignment = Alignment.Start,
+            modifier = Modifier
+                .offset((-60).dp)
+                .wrapContentHeight()                
+        ) {
+            Text(
+                text = title,
+                fontWeight = FontWeight.Bold,
+                fontSize = 14.sp,
+                color = black
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = subtitle,
+                fontSize = 12.sp,
+                color = Color.Gray
+            )
+        }
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxHeight(0.75f)
+                .wrapContentHeight()
+        ) {
 
-        Text(
-            text = price,
-            fontWeight = FontWeight.Bold,
-            fontSize = 16.sp,
-            color = Color.Black,
-            textAlign = TextAlign.Right
-        )
+            Text(
+                text = price,
+                fontWeight = FontWeight.Bold,
+                fontSize = 16.sp,
+                color = black,
+                textAlign = TextAlign.Right
+            )
+        }
     }
-}
 }
 
 
