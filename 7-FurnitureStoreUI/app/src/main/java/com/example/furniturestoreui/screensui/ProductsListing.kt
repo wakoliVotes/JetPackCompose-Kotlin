@@ -246,6 +246,7 @@ fun RightItem(
             Text(text = title, color = texttitlewhite)
             Text(text = price, fontWeight = FontWeight.Bold)
         }
+    }
         Box(
             modifier = Modifier
                 .offset(
@@ -259,7 +260,4 @@ fun RightItem(
                 modifier = Modifier.aspectRatio(1f)
             )
         }
-
     }
-
-}
