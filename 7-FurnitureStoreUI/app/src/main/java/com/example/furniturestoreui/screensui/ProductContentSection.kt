@@ -28,10 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.furniturestoreui.R
 import com.example.furniturestoreui.barcomponents.TopBarWithBack
-import com.example.furniturestoreui.ui.theme.orangedark
-import com.example.furniturestoreui.ui.theme.orangelight
-import com.example.furniturestoreui.ui.theme.paledark
-import com.example.furniturestoreui.ui.theme.white
+import com.example.furniturestoreui.ui.theme.*
 
 // TopBarWithBackProductList
 @Preview(showBackground = true)
@@ -82,7 +79,7 @@ fun ProductContent() {
             Text(
                 text = "Chair",
                 fontSize = 14.sp,
-                color = white
+                color = texttitlewhite
             )
 
         }
@@ -153,7 +150,7 @@ fun ProductAbout() {
             modifier = Modifier
                 .size(30.dp)
                 .clip(shape = CircleShape)
-                .background(orangedark)
+                .background(greendark)
         )
         Box(
             modifier = Modifier
@@ -176,7 +173,7 @@ fun ProductAbout() {
                     "by awarded winning duo of Manchesti\n" +
                     "Bermadi and Fresco Duli brothers.",
             fontSize = 18.sp,
-            color = white,
+            color = texttitlewhite,
             fontWeight = FontWeight.Bold
         )
 
@@ -190,7 +187,7 @@ fun ProductAddtoCart() {
         modifier = Modifier
             .fillMaxWidth()
             .height(100.dp)
-            .background(Color.Red),
+            .background(addtocart),
         contentAlignment = Alignment.BottomCenter
     ) {
         Column(
@@ -220,6 +217,7 @@ fun ProductAddtoCart() {
             }
             ClickableText(
                 text = AnnotatedString("+ Add to Cart"),
+                Modifier.offset(16.dp, (-30).dp),
                 onClick = { offset -> }
             )
         }
