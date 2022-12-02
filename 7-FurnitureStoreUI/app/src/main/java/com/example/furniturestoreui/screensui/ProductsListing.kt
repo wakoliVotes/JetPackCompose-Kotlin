@@ -20,10 +20,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.furniturestoreui.R
 import com.example.furniturestoreui.barcomponents.TopBarWithBackProductListing
+import com.example.furniturestoreui.ui.theme.black
+import com.example.furniturestoreui.ui.theme.platinum
 import com.example.furniturestoreui.ui.theme.white
 
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun ProductListing(){
     Box(modifier = Modifier.verticalScroll(rememberScrollState())){
@@ -63,8 +65,8 @@ fun SortFilter(){
     ) {
         Button(
             onClick = { /*TODO*/ },
-            border = BorderStroke(1.dp, Color.LightGray),
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
+            border = BorderStroke(1.dp, platinum),
+            colors = ButtonDefaults.buttonColors(backgroundColor = white),
             modifier = Modifier.padding(8.dp)
 
         ) {
@@ -76,9 +78,8 @@ fun SortFilter(){
             )
             Text(
                 text = "Sort",
-                color = Color.Black
+                color = black
             )
-
         }
         Button(
             onClick = { /*TODO*/ },
