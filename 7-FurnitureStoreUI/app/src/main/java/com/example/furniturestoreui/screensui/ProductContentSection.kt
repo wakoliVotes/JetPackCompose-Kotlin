@@ -28,32 +28,31 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.furniturestoreui.R
 import com.example.furniturestoreui.barcomponents.TopBarWithBack
+import com.example.furniturestoreui.ui.theme.orangedark
+import com.example.furniturestoreui.ui.theme.orangelight
 import com.example.furniturestoreui.ui.theme.paledark
 import com.example.furniturestoreui.ui.theme.white
 
 // TopBarWithBackProductList
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun ProductContentSection(){
-    Box(modifier = Modifier.verticalScroll(rememberScrollState())){
+fun ProductContentSection() {
+    Box(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Column {
-         TopBarWithBack(
+            TopBarWithBack(
                 title = "Product",
                 onBackClick = {
                 },
             )
             Column {
                 Content()
-
             }
-
         }
     }
-
 }
 
 @Composable
-fun Content(){
+fun Content() {
     Column {
         ProductItemImage()
         ProductContent()
@@ -65,7 +64,7 @@ fun Content(){
 }
 
 @Composable
-fun ProductContent(){
+fun ProductContent() {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
@@ -93,10 +92,10 @@ fun ProductContent(){
                 .height(100.dp),
             elevation = 10.dp
         ) {
-            Column (
+            Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
-                    )
+            )
             {
                 Text(
                     text = "$346",
@@ -105,77 +104,72 @@ fun ProductContent(){
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold
                 )
-
-
             }
-
         }
-
-
     }
 }
 
 @Composable
-fun ProductItemImage(){
-    Column (
+fun ProductItemImage() {
+    Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-            )
+    )
     {
-     Box(
-         modifier = Modifier
-             .fillMaxWidth()
-             .fillMaxHeight()
-     )   {
-         Image(
-             painter = painterResource(id = R.drawable.img_2),
-             contentDescription = "Product Image",
-             modifier = Modifier
-                 .fillMaxWidth()
-                 .height(300.dp)
-         )
-     }
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight()
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.img_2),
+                contentDescription = "Product Image",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(300.dp)
+            )
+        }
     }
 }
 
 @Composable
-fun ProductAbout(){
-    Row (
+fun ProductAbout() {
+    Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(16.dp)
-            )
+    )
     {
         Box(
             modifier = Modifier
                 .size(30.dp)
                 .clip(shape = CircleShape)
-                .background(color = Color.Yellow)
+                .background(orangedark)
         )
         Box(
             modifier = Modifier
                 .size(30.dp)
                 .clip(shape = CircleShape)
-                .background(color = Color.Green)
+                .background(orangedark)
         )
         Box(
             modifier = Modifier
                 .size(30.dp)
                 .clip(shape = CircleShape)
-                .background(color = Color.Cyan)
+                .background(orangelight)
         )
 
     }
     Spacer(modifier = Modifier.padding(5.dp))
-    Column (
+    Column(
         modifier = Modifier
             .padding(16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+    ) {
         Text(
             text = "In a best traditions, constructed of hardwood\n" +
                     "with padding of high-resilient foam.Created\n" +
@@ -191,21 +185,21 @@ fun ProductAbout(){
 
 
 @Composable
-fun ProductAddtoCart(){
+fun ProductAddtoCart() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .height(100.dp)
             .background(Color.Red),
         contentAlignment = Alignment.BottomCenter
-    ){
-        Column (
+    ) {
+        Column(
             modifier = Modifier
                 .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
 
-                ){
+        ) {
             Card(
                 modifier = Modifier
                     .offset(16.dp, ((-40).dp))
