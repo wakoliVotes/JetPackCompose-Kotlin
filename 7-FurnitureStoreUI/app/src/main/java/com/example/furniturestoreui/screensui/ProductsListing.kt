@@ -22,6 +22,7 @@ import com.example.furniturestoreui.R
 import com.example.furniturestoreui.barcomponents.TopBarWithBackProductListing
 import com.example.furniturestoreui.ui.theme.black
 import com.example.furniturestoreui.ui.theme.platinum
+import com.example.furniturestoreui.ui.theme.texttitlewhite
 import com.example.furniturestoreui.ui.theme.white
 
 
@@ -83,7 +84,7 @@ fun SortFilter(){
         }
         Button(
             onClick = { /*TODO*/ },
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
+            colors = ButtonDefaults.buttonColors(backgroundColor = white),
             elevation = ButtonDefaults.elevation(8.dp),
             modifier = Modifier
                 .padding(8.dp)
@@ -93,12 +94,12 @@ fun SortFilter(){
             Icon(
                 imageVector = Icons.Default.List,
                 contentDescription = "",
-                tint = Color.Black,
+                tint = black,
                 modifier = Modifier.padding(end = 4.dp)
             )
             Text(
                 text = "Filter",
-                color = Color.Black
+                color = black
             )
 
         }
@@ -185,6 +186,7 @@ fun LeftItem(
             .height(120.dp)
     ){
         Image(
+            contentScale = ContentScale.Fit,
             painter = imagePainter,
             contentDescription = "",
             modifier = Modifier.aspectRatio(1f)
@@ -212,7 +214,7 @@ fun RightSide(){
             price = "$346.0"
         )
         RightItem(
-            imagePainter = painterResource(id = R.drawable.img_2),
+            imagePainter = painterResource(id = R.drawable.img_3),
             title = "Dunham Armchair",
             price = "$783.0"
         )
@@ -241,14 +243,13 @@ fun RightItem(
                 .padding(16.dp),
             verticalArrangement = Arrangement.Bottom
         ) {
-            Text(text = title, color = white)
+            Text(text = title, color = texttitlewhite)
             Text(text = price, fontWeight = FontWeight.Bold)
         }
         Box(
             modifier = Modifier
                 .offset(
-                    20.dp, (-210).dp
-                )
+                    20.dp, (-210).dp)
                 .height(120.dp)
         ){
             Image(
