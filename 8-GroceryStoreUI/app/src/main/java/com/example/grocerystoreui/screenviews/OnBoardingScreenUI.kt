@@ -1,5 +1,6 @@
 package com.example.grocerystoreui.screenviews
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -26,6 +27,7 @@ import com.example.grocerystoreui.R
 import com.example.grocerystoreui.navigation.MainActions
 import com.example.grocerystoreui.ui.theme.blue
 
+@SuppressLint("ProduceStateDoesNotAssignValue")
 @Composable
 fun OnBoardingScreenUI(actions: MainActions) {
     var pageCount by remember {

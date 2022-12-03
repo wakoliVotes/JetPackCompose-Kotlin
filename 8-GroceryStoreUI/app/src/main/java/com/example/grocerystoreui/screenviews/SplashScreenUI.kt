@@ -1,5 +1,6 @@
 package com.example.grocerystoreui.screenviews
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -15,6 +16,7 @@ import com.example.grocerystoreui.R
 import com.example.grocerystoreui.navigation.MainActions
 import kotlinx.coroutines.delay
 
+@SuppressLint("ProduceStateDoesNotAssignValue")
 @Composable
 fun SplashScreenUI(actions: MainActions) {
     androidx.compose.material.Surface(
@@ -30,7 +32,6 @@ fun SplashScreenUI(actions: MainActions) {
             )
         }
     }
-
     produceState(initialValue = -1) {
         delay(3000)
         actions.gotoOnBoarding()

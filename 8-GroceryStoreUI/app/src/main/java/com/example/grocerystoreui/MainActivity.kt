@@ -30,7 +30,6 @@ fun GroceriesUIMain(){
     GroceryStoreUITheme {
         androidx.compose.material.Surface(color = MaterialTheme.colors.background) {
             NavGraph()
-
         }
     }
 }
