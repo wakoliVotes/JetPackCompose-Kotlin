@@ -4,21 +4,24 @@ import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.grocerystoreui.R
 import com.example.grocerystoreui.datautils.GroceryData
 import com.example.grocerystoreui.navigation.MainActions
-import com.example.grocerystoreui.ui.theme.aliceBlue
-import com.example.grocerystoreui.ui.theme.azureishWhite
-import com.example.grocerystoreui.ui.theme.cultured
-import com.example.grocerystoreui.ui.theme.seashell
+import com.example.grocerystoreui.ui.theme.*
 
 @Composable
 fun VegetableListUI(actions: MainActions) {
@@ -40,24 +43,63 @@ fun VegetableListUI(actions: MainActions) {
     ) {
         LazyColumn(
 
-        ){
+        ) {
             item {
                 Spacer(modifier = Modifier.height(24.dp))
-                Row (
+                Row(
                     verticalAlignment = Alignment.Top,
                     horizontalArrangement = Arrangement.SpaceBetween,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 12.dp)
-                        ) {
+                ) {
                     Image(
                         imageVector = Icons.Default.KeyboardArrowLeft,
                         contentDescription = "Back Arrow Image"
                     )
                     Text(
-                        text = ""
+                        text = "Lengkapi Nutrisimu",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp
                     )
-
+                    Image(
+                        painter = painterResource(id = R.drawable.filter),
+                        contentDescription = "Filter Image",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.size(24.dp)
+                    )
+                }
+                Spacer(modifier = Modifier.height(30.dp))
+                TextField(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    colors = TextFieldDefaults.textFieldColors(
+                        backgroundColor = ghostWhite,
+                        focusedIndicatorColor = Color.Transparent,
+                        unfocusedIndicatorColor = Color.Transparent
+                    ),
+                    value = text,
+                    onValueChange = { text = it },
+                    placeholder = {
+                        Text(
+                            text = "Carl Sayuran",
+                            color = platinum
+                        )
+                    },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Filled.Search,
+                            contentDescription = stringResource(R.string.text_search_icon),
+                            tint = lightSilver
+                        )
+                    },
+                )
+                Spacer(modifier = Modifier.height(24.dp))
+            }
+            items(vegetablesItemList.windowed(2, 2, true)) {sublist -> 
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    sublist.foEach
+                    
                 }
             }
         }
