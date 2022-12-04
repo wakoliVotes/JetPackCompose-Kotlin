@@ -1,16 +1,19 @@
 package com.example.grocerystoreui.screenviews
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -112,39 +115,62 @@ fun VegetableListUI(actions: MainActions) {
                             Column(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .padding(4.dp),
-                                contentAlignment = Alignment.Center
+                                    .padding(16.dp),
                             ) {
-                                Image(
-                                    painter = painterResource(item.image),
-                                    contentDescription = "Vegetable",
-                                )
-
-                            }
-                            Spacer(modifier = Modifier.height(24.dp))
-                            Row(
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                            ){
-                                Column(modifier = Modifier.wrapContentHeight()) {
-                                    {
-                                        Text(text = )
-                                    }
-                                    
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(4.dp),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Image(
+                                        painter = painterResource(item.image),
+                                        contentDescription = "Vegetable",
+                                    )
                                 }
+                                Spacer(modifier = Modifier.height(24.dp))
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                ) {
+                                    Column(modifier = Modifier.wrapContentHeight()) {
+
+                                        Text(
+                                            text = item.name,
+                                            fontSize = 13.sp,
+                                            fontWeight = FontWeight.Bold,
+                                            color = black,
+                                        )
+                                        Text(
+                                            text = item.price,
+                                            fontSize = 11.sp,
+                                            color = black,
+                                        )
+                                    }
+                                    Box(
+                                        modifier = Modifier
+                                            .clip(RoundedCornerShape(8.dp))
+                                            .background(gold),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.Add,
+                                            contentDescription = stringResource(R.string.text_add_icon),
+                                            tint = white
+                                        )
+                                    }
+
+                                }
+
                             }
-
-
                         }
                     }
-
                 }
+
             }
         }
 
     }
-
-
 }
