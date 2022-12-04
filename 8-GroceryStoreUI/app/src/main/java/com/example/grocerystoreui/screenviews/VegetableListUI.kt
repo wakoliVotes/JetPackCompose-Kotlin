@@ -26,6 +26,7 @@ import com.example.grocerystoreui.datautils.GroceryData
 import com.example.grocerystoreui.navigation.MainActions
 import com.example.grocerystoreui.ui.theme.*
 
+@ExperimentalMaterialApi
 @Composable
 fun VegetableListUI(actions: MainActions) {
     var text by remember {
@@ -39,14 +40,12 @@ fun VegetableListUI(actions: MainActions) {
         GroceryData(R.drawable.red_capsicum, "Capsicum", "Ksh. 300.10/Kg", seashell),
         GroceryData(R.drawable.onion, "Onion", "Ksh. 250.00/Kg", aliceBlue),
     )
-    androidx.compose.material.Surface(
+    Surface(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        LazyColumn(
-
-        ) {
+        LazyColumn {
             item {
                 Spacer(modifier = Modifier.height(24.dp))
                 Row(
@@ -72,7 +71,7 @@ fun VegetableListUI(actions: MainActions) {
                         modifier = Modifier.size(24.dp)
                     )
                 }
-                Spacer(modifier = Modifier.height(30.dp))
+                Spacer(modifier = Modifier.height(36.dp))
                 TextField(
                     modifier = Modifier
                         .fillMaxWidth(),
@@ -99,7 +98,7 @@ fun VegetableListUI(actions: MainActions) {
                 )
                 Spacer(modifier = Modifier.height(24.dp))
             }
-            items(vegetablesItemList.windowed(2, 2, true)) { sublist ->
+            items(vegetablesItemList.windowed(2,2,true)) { sublist ->
                 Row(modifier = Modifier.fillMaxWidth()) {
                     sublist.foEach { item ->
                         Card(
