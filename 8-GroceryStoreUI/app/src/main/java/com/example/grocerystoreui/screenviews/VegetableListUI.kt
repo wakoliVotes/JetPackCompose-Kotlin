@@ -3,6 +3,7 @@ package com.example.grocerystoreui.screenviews
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
@@ -95,10 +96,50 @@ fun VegetableListUI(actions: MainActions) {
                 )
                 Spacer(modifier = Modifier.height(24.dp))
             }
-            items(vegetablesItemList.windowed(2, 2, true)) {sublist -> 
+            items(vegetablesItemList.windowed(2, 2, true)) { sublist ->
                 Row(modifier = Modifier.fillMaxWidth()) {
-                    sublist.foEach
-                    
+                    sublist.foEach { item ->
+                        Card(
+                            modifier = Modifier
+                                .fillParentMaxWidth(0.5f)
+                                .padding(4.dp),
+                            shape = RoundedCornerShape(16.dp),
+                            backgroundColor = item.cardBg,
+                            onClick = {
+                                actions.gotoVegetableDetail()
+                            }
+                        ) {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(4.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Image(
+                                    painter = painterResource(item.image),
+                                    contentDescription = "Vegetable",
+                                )
+
+                            }
+                            Spacer(modifier = Modifier.height(24.dp))
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                            ){
+                                Column(modifier = Modifier.wrapContentHeight()) {
+                                    {
+                                        Text(text = )
+                                    }
+                                    
+                                }
+                            }
+
+
+                        }
+                    }
+
                 }
             }
         }
