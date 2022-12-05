@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -33,12 +34,24 @@ fun VegetableListUI(actions: MainActions) {
         mutableStateOf("")
     }
     val vegetablesItemList = listOf(
-        GroceryData(R.drawable.carrot, "Carrot", "Ksh. 120.00/Kg", seashell),
-        GroceryData(R.drawable.tomato, "Tomato", "Ksh. 130.50/Kg", aliceBlue),
-        GroceryData(R.drawable.pumpkin, "Pumpkin", "Ksh. 90.60/Kg", cultured),
-        GroceryData(R.drawable.cauliflower, "Cauliflower", "Ksh. 100.00/Kg", azureishWhite),
-        GroceryData(R.drawable.red_capsicum, "Capsicum", "Ksh. 300.10/Kg", seashell),
-        GroceryData(R.drawable.onion, "Onion", "Ksh. 250.00/Kg", aliceBlue),
+        GroceryData(R.drawable.carrot, stringResource(R.string.carrot), "Ksh. 120.00/Kg", seashell),
+        GroceryData(R.drawable.tomato,
+            stringResource(R.string.tomato),
+            "Ksh. 130.50/Kg",
+            aliceBlue),
+        GroceryData(R.drawable.pumpkin,
+            stringResource(R.string.pumpkin),
+            "Ksh. 90.60/Kg",
+            cultured),
+        GroceryData(R.drawable.cauliflower,
+            stringResource(R.string.cauliflower),
+            "Ksh. 100.00/Kg",
+            azureishWhite),
+        GroceryData(R.drawable.red_capsicum,
+            stringResource(R.string.capsicum),
+            "Ksh. 300.10/Kg",
+            seashell),
+        GroceryData(R.drawable.onion, stringResource(R.string.onion), "Ksh. 250.00/Kg", aliceBlue)
     )
     Surface(
         modifier = Modifier
@@ -98,9 +111,10 @@ fun VegetableListUI(actions: MainActions) {
                 )
                 Spacer(modifier = Modifier.height(24.dp))
             }
-            items(vegetablesItemList.windowed(2,2,true)) { sublist ->
+
+            items (vegetablesItemList.windowed(2,2,true)) { sublist ->
                 Row(modifier = Modifier.fillMaxWidth()) {
-                    sublist.foEach { item ->
+                    sublist.forEach { item ->
                         Card(
                             modifier = Modifier
                                 .fillParentMaxWidth(0.5f)

@@ -22,5 +22,11 @@
     <string name="text_search_icon">Search Icon</string>
     <string name="text_add_icon">Add Icon</string>
     <string name="text_heart_icon">Heart Icon</string>
+    <string name="carrot">Carrot</string>
+    <string name="tomato">Tomato</string>
+    <string name="pumpkin">Pumpkin</string>
+    <string name="cauliflower">Cauliflower</string>
+    <string name="capsicum">Capsicum</string>
+    <string name="onion">Onion</string>
 
 </resources>
