@@ -26,19 +26,17 @@ fun DashBoardUI(
 
     Scaffold(
         bottomBar = {
-            items = navItems,
-            currentSection = sectionState.value,
-            onSectionSelected = {
-                sectionState.value = it
-            },
-        }
-    ) { innerPadding ->
+            BottomBar(
+                items = navItems,
+                currentSection = sectionState.value,
+            ) { sectionState.value = it }
+        }) { innerPadding ->
         val modifier = Modifier.padding(innerPadding)
         Crossfade(
             modifier = modifier,
             targetState = sectionState.value
         ) { section ->
-            when(section) {
+            when (section) {
                 DashboardSection.Home -> HomeUI(actions)
                 DashboardSection.List -> VegetableDetailUI(actions)
                 else -> {}
@@ -51,26 +49,26 @@ fun DashBoardUI(
 private fun BottomBar(
     items: List<DashboardSection>,
     currentSection: DashboardSection,
-    onSectionSelected: (DashboardSection) -> UInt,
+    onSectionSelected: (DashboardSection) -> Unit,
 ) {
-    BottomNavigation (
+    BottomNavigation(
         modifier = Modifier.height(50.dp),
         backgroundColor = MaterialTheme.colors.background,
         contentColor = contentColorFor(MaterialTheme.colors.background)
 
-            ) {
-        items.forEach{ section ->
+    ) {
+        items.forEach { section ->
             val selected = section == currentSection
 
             val iconRes = if (selected) section.selectedIcon else section.icon
 
             BottomNavigationItem(
                 icon = {
-                       Icon(
-                           painter = painterResource(id = iconRes),
-                           contentDescription = "Bottom nav icons",
-                           modifier = Modifier.size(24.dp)
-                       )
+                    Icon(
+                        painter = painterResource(id = iconRes),
+                        contentDescription = "Bottom nav icons",
+                        modifier = Modifier.size(24.dp)
+                    )
                 },
                 selected = selected,
                 onClick = { onSectionSelected(section) },
@@ -84,7 +82,7 @@ private fun BottomBar(
 
 private enum class DashboardSection(
     val icon: Int,
-    val selectedIcon: Int
+    val selectedIcon: Int,
 ) {
     Home(R.drawable.home, R.drawable.home),
     List(R.drawable.list, R.drawable.list),

@@ -33,12 +33,12 @@ fun NavGraph() {
 
         // DashBoard
         composable(ScreenRoutes.DashBoard.route) {
-            DashBoardUI()
+            DashBoardUI(actions)
         }
 
         // Vegetable Details
         composable(ScreenRoutes.VegetableDetail.route) {
-            VegetableDetailUI()
+            VegetableDetailUI(actions)
         }
     }
 

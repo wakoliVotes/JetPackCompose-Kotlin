@@ -7,6 +7,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
@@ -17,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -32,7 +34,7 @@ fun HomeUI(actions: MainActions) {
     var itemList = listOf("Favorites", "Home Sweet", "Organics", "Fresh")
 
 
-    androidx.compose.material.Surface(
+    Surface(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
@@ -118,48 +120,279 @@ fun HomeUI(actions: MainActions) {
                             color = if (item == 0) gold else Color.LightGray
                         )
                     }
-                    Spacer(modifier = Modifier.height(24.dp))
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .wrapContentHeight()
-                    ) {
+                    Spacer(modifier = Modifier.height(8.dp))
+                }
+            }
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight()
+            ) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(0.5f)
+                        .wrapContentHeight()
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(navajoWhite)
+                ) {
+                    Column(modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp))
+                    {
                         Box(
                             modifier = Modifier
-                                .fillMaxWidth()
-                                .weight(0.5f)
-                                .wrapContentHeight()
-                                .clip(RoundedCornerShape(16.dp))
-                                .background(navajoWhite)
-                        ){
-                            Column(modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp))
-                            {
-                                Box(
-                                    modifier = Modifier
-                                        .clip(CircleShape)
-                                        .background(white)
-                                        .padding(4.dp)
-                                ){
-                                    Icon(
-                                        imageVector = Icons.Default.Favorite,
-                                        contentDescription = stringResource(R.string.text_heart_icon),
-                                        tint = Color.Red
-                                    )
-                                }
-
-                            }
+                                .clip(CircleShape)
+                                .background(white)
+                                .padding(4.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Favorite,
+                                contentDescription = stringResource(R.string.text_heart_icon),
+                                tint = Color.Red
+                            )
                         }
 
                     }
 
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Box(
+                        modifier = Modifier.fillMaxWidth(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Image(
+                            modifier = Modifier
+                                .size(100.dp),
+                            painter = painterResource(R.drawable.potato),
+                            contentDescription = "Potato",
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+
+                        Column(
+                            modifier = Modifier
+                                .wrapContentHeight()
+                        ) {
+                            Text(
+                                text = "Potato",
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = black,
+                            )
+                            Text(
+                                text = "Rs. 14.0/Kg",
+                                fontSize = 12.sp,
+                                color = black,
+                            )
+                        }
+                        Box(
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(gold)
+                                .padding(4.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(
+                                modifier = Modifier.size(20.dp, 20.dp),
+                                imageVector = Icons.Default.Add,
+                                contentDescription = stringResource(R.string.text_add_icon),
+                                tint = white
+                            )
+                        }
+                    }
+
+                }
+                Spacer(modifier = Modifier.width(16.dp))
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(0.5f)
+                        .wrapContentHeight()
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(water)
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp)
+                    ) {
+                        Row(
+                            horizontalArrangement = Arrangement.End,
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .clip(CircleShape)
+                                    .background(white)
+                                    .padding(4.dp),
+                            ) {
+                                Icon(
+                                    modifier = Modifier.size(16.dp, 16.dp),
+                                    imageVector = Icons.Default.Favorite,
+                                    contentDescription = stringResource(R.string.text_heart_icon),
+                                    tint = Color.Red
+                                )
+                            }
+                        }
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Box(
+                            modifier = Modifier.fillMaxWidth(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Image(
+                                modifier = Modifier
+                                    .size(100.dp),
+                                painter = painterResource(R.drawable.cabbage),
+                                contentDescription = "cabbage",
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                        ) {
+
+                            Column(
+                                modifier = Modifier
+                                    .wrapContentHeight()
+                            ) {
+                                Text(
+                                    text = "Cabbage",
+                                    fontSize = 14.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = black,
+                                )
+                                Text(
+                                    text = "Rs. 28.0/Kg",
+                                    fontSize = 12.sp,
+                                    color = black,
+                                )
+                            }
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(8.dp))
+                                    .background(gold)
+                                    .padding(4.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Icon(
+                                    modifier = Modifier.size(20.dp, 20.dp),
+                                    imageVector = Icons.Default.Add,
+                                    contentDescription = stringResource(R.string.text_add_icon),
+                                    tint = white
+                                )
+                            }
+
+                        }
+
+                    }
+                    Spacer(modifier = Modifier.height(24.dp))
+                    Row(
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            text = "Lagi Diskon Nikh",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp,
+                            color = black,
+                        )
+                        Text(
+                            text = "Lihat Semua",
+                            fontSize = 14.sp,
+                            color = gold,
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(24.dp))
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .wrapContentHeight(),
+                        shape = RoundedCornerShape(16.dp)
+                    ) {
+                        Row(
+                            horizontalArrangement = Arrangement.Center,
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .wrapContentHeight()
+                                .padding(8.dp)
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .weight(0.2f)
+                                    .height(64.dp)
+                                    .clip(RoundedCornerShape(12.dp))
+                                    .background(lightBlue),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Image(
+                                    modifier = Modifier.padding(8.dp),
+                                    painter = painterResource(R.drawable.pumpkin),
+                                    contentDescription = "pumpkin",
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Column(
+                                verticalArrangement = Arrangement.SpaceEvenly,
+                                horizontalAlignment = Alignment.Start,
+                                modifier = Modifier
+                                    .weight(0.55f)
+                                    .wrapContentHeight()
+                            ) {
+                                Text(
+                                    text = "Labu Kuning",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 14.sp,
+                                    color = black,
+                                )
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(
+                                    text = "Cocok untuk memrunkunkan berat badam",
+                                    fontSize = 12.sp,
+                                    color = Color.Gray,
+                                )
+                            }
+                            Column(
+                                verticalArrangement = Arrangement.Center,
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .weight(0.25f)
+                                    .wrapContentHeight()
+                            ) {
+                                Text(
+                                    text = "Rs. 9.60/Kg",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 12.sp,
+                                    color = gold,
+                                )
+                                /*Text(
+                                text = "Cocok untuk memrunkunkan berat badam",
+                                fontSize = 12.sp,
+                                color = Color.Gray,
+                            )*/
+                            }
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(24.dp))
                 }
 
             }
         }
-
-
     }
-
 }
