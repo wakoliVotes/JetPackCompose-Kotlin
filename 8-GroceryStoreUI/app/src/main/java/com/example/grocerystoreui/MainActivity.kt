@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.grocerystoreui.navigation.NavGraph
 import com.example.grocerystoreui.ui.theme.GroceryStoreUITheme
 
@@ -19,6 +20,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @Preview
     @Composable
     fun GroceriesUIMain() {
         GroceryStoreUITheme {

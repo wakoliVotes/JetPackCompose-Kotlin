@@ -10,12 +10,12 @@
 
 
 <!--    OTHER STRINGS FOR APP -->
-    <string name="onboarding_heading_1">Kesegaran Terjamin</string>
-    <string name="onboarding_heading_2">Langsung Dipetik</string>
-    <string name="onboarding_heading_3">Diantar Langsung</string>
-    <string name="onboarding_description_1">Dapatkan sayuran dalam kondisi segar dan kualitas terbaik</string>
-    <string name="onboarding_description_2">Sayuran yang kami sediakan dalam kondisi terbaik langsung dipetik dari kebun</string>
-    <string name="onboarding_description_3">Setelah sayuran dipetik dari kebun kami langsung mengirimkannya untuk Anda</string>
+    <string name="onboarding_heading_1">Guaranteed Freshness</string>
+    <string name="onboarding_heading_2">Directly Picked</string>
+    <string name="onboarding_heading_3">Direct Delivery</string>
+    <string name="onboarding_description_1">Get vegetables in fresh conditions and the best quality</string>
+    <string name="onboarding_description_2">The vegetables we provide are in the best conditions picked directly from the garden</string>
+    <string name="onboarding_description_3"></string>
 
     <string name="text_back_icon">Back Icon</string>
     <string name="text_filter_icon">Filter Icon</string>
