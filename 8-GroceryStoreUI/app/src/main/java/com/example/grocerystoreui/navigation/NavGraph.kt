@@ -1,5 +1,6 @@
 package com.example.grocerystoreui.navigation
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
@@ -11,6 +12,7 @@ import com.example.grocerystoreui.screenviews.OnBoardingScreenUI
 import com.example.grocerystoreui.screenviews.SplashScreenUI
 import com.example.grocerystoreui.screenviews.VegetableDetailUI
 
+@ExperimentalMaterialApi
 @Composable
 fun NavGraph() {
     val navController = rememberNavController()

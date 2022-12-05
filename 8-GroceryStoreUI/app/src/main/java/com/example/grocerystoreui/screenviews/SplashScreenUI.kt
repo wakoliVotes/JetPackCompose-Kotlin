@@ -28,7 +28,8 @@ fun SplashScreenUI(actions: MainActions) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            Image(painter = painterResource(id = R.drawable.logo), contentDescription = "Logo"
+            Image(painter = painterResource(id = R.drawable.logo),
+                contentDescription = "Logo"
             )
         }
     }

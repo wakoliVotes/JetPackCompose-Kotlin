@@ -9,6 +9,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -57,7 +58,7 @@ fun OnBoardingScreenUI(actions: MainActions) {
         produceState(initialValue = -1) { gotoDashBoard(actions) }
         return
     }
-    androidx.compose.material.Surface(modifier = Modifier
+    Surface(modifier = Modifier
         .padding(16.dp)
         .fillMaxSize()
     ) {
