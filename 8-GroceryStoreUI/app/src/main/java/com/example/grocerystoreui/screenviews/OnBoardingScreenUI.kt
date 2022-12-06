@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
@@ -26,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.grocerystoreui.R
 import com.example.grocerystoreui.navigation.MainActions
+import com.example.grocerystoreui.ui.theme.Shapes
 import com.example.grocerystoreui.ui.theme.blue
 
 @SuppressLint("ProduceStateDoesNotAssignValue")
@@ -74,6 +76,8 @@ fun OnBoardingScreenUI(actions: MainActions) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(200.dp)
+                    .clip(shape = Shapes.medium)
+
             )
             Spacer(modifier = Modifier.height(44.dp))
             Text(
@@ -159,13 +163,9 @@ fun OnBoardingScreenUI(actions: MainActions) {
                     )
 
                 }
-
             }
-
-
         }
     }
-
 }
 
 private fun gotoDashBoard(actions: MainActions) {

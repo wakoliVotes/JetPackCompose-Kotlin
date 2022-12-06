@@ -97,7 +97,7 @@ fun VegetableListUI(actions: MainActions) {
                     onValueChange = { text = it },
                     placeholder = {
                         Text(
-                            text = "Carl Sayuran",
+                            text = "Search for Groceries",
                             color = platinum
                         )
                     },
