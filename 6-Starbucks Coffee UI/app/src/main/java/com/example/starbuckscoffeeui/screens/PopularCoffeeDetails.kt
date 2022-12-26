@@ -4,6 +4,7 @@ package com.example.starbuckscoffeeui.screens
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -13,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -41,7 +43,7 @@ fun PopularCoffee() {
                     Text(
                         text = "Popular Coffee",
                         style = TextStyle(fontFamily = FontFamily.Monospace),
-                        fontSize = 19.sp,
+                        fontSize = 20.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                     Text(
@@ -56,6 +58,11 @@ fun PopularCoffee() {
             Spacer(modifier = Modifier.height(10.dp))
             // Next Section with Image
             // Use Row
+            LazyRow(){
+                item {
+
+                }
+            }
             Row(
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier
@@ -63,18 +70,17 @@ fun PopularCoffee() {
                     .fillMaxWidth()
             ) {
                 Card(elevation = 10.dp, shape = RoundedCornerShape(8.dp)) {
-                    Box(modifier = Modifier.width(140.dp)) {
+                    Box(modifier = Modifier.width(160.dp)) {
                         Column {
                             Image(
                                 painter = painterResource(id = R.drawable.img_1),
                                 contentDescription = "Popular Coffee",
                                 modifier = Modifier
                                     .height(180.dp)
-                                    .width(140.dp)
                                     .clip(
                                         shape = RoundedCornerShape(18.dp)
-                                    )
-
+                                    ),
+                                contentScale = ContentScale.FillWidth
                             )
 
                             // Column for next items under image
@@ -148,28 +154,22 @@ fun PopularCoffee() {
                 }
                 Spacer(modifier = Modifier.width(10.dp))
                 // Next Card
-                Card(
-                    modifier = Modifier.padding(top = 10.dp),
-                    elevation = 10.dp, shape = RoundedCornerShape(8.dp)
-
-                ) {
-                    Box(modifier = Modifier.width(130.dp)) {
+                Card(elevation = 10.dp, shape = RoundedCornerShape(8.dp)) {
+                    Box(modifier = Modifier.width(160.dp)) {
                         Column {
                             Image(
-                                painter = painterResource(id = R.drawable.img),
+                                painter = painterResource(id = R.drawable.img_1),
                                 contentDescription = "Popular Coffee",
                                 modifier = Modifier
-                                    .padding(top = 0.dp)
-                                    .height(160.dp)
-                                    .width(130.dp)
+                                    .height(180.dp)
                                     .clip(
-                                        shape = RoundedCornerShape(8.dp)
-                                    )
-
+                                        shape = RoundedCornerShape(18.dp)
+                                    ),
+                                contentScale = ContentScale.FillWidth
                             )
 
                             // Column for next items under image
-                            Column(modifier = Modifier.padding(5.dp)) {
+                            Column(modifier = Modifier.padding(start = 10.dp)) {
                                 Text(
                                     text = "Vanilla Sweet",
                                     style = TextStyle(
@@ -202,7 +202,7 @@ fun PopularCoffee() {
 
                                 }
                                 // Spacing
-//                                Spacer(modifier = Modifier.height(10.dp))
+                                // Spacer(modifier = Modifier.height(10.dp))
                                 Row(
                                     modifier = Modifier.fillMaxWidth(),
                                     horizontalArrangement = Arrangement.SpaceBetween
@@ -218,13 +218,14 @@ fun PopularCoffee() {
                                     )
                                     Text(
                                         modifier = Modifier
-                                            .padding(end = 15.dp)
+                                            .padding(end = 10.dp)
                                             .alpha(0.87f),
                                         text = "+",
                                         style = TextStyle(
                                             fontSize = 16.sp,
-                                            fontWeight = FontWeight.Bold,
+                                            fontWeight = FontWeight.SemiBold,
                                             fontFamily = FontFamily.Monospace
+
                                         )
                                     )
 
@@ -236,9 +237,172 @@ fun PopularCoffee() {
 
                     }
                 }
+                // Next Card
+                Card(elevation = 10.dp, shape = RoundedCornerShape(8.dp)) {
+                    Box(modifier = Modifier.width(160.dp)) {
+                        Column {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_1),
+                                contentDescription = "Popular Coffee",
+                                modifier = Modifier
+                                    .height(180.dp)
+                                    .clip(
+                                        shape = RoundedCornerShape(18.dp)
+                                    ),
+                                contentScale = ContentScale.FillWidth
+                            )
+
+                            // Column for next items under image
+                            Column(modifier = Modifier.padding(start = 10.dp)) {
+                                Text(
+                                    text = "Vanilla Sweet",
+                                    style = TextStyle(
+                                        fontWeight = FontWeight.Bold,
+                                        fontFamily = FontFamily.Monospace
+
+                                    ),
+                                    modifier = Modifier.alpha(0.87f)
+
+                                )
+                                // Next Text
+                                Text(
+                                    text = "Calories - 110",
+                                    style = TextStyle(
+                                        fontSize = 12.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        fontFamily = FontFamily.Monospace
+                                    ),
+                                    modifier = Modifier.alpha(0.4f)
+                                )
+                                Spacer(modifier = Modifier.height(10.dp))
+                                //
+                                Box(
+
+                                    modifier = Modifier
+                                        .height(1.dp)
+                                        .width(130.dp)
+                                        .background(color = Color.Gray)
+                                ) {
+
+                                }
+                                // Spacing
+                                // Spacer(modifier = Modifier.height(10.dp))
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.SpaceBetween
+                                ) {
+                                    Text(
+                                        text = "$20",
+                                        style = TextStyle(
+                                            fontSize = 12.sp,
+                                            fontWeight = FontWeight.Bold,
+                                            fontFamily = FontFamily.Monospace
+                                        ),
+                                        modifier = Modifier.alpha(0.87f)
+                                    )
+                                    Text(
+                                        modifier = Modifier
+                                            .padding(end = 10.dp)
+                                            .alpha(0.87f),
+                                        text = "+",
+                                        style = TextStyle(
+                                            fontSize = 16.sp,
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontFamily = FontFamily.Monospace
+
+                                        )
+                                    )
+
+                                }
+
+
+                            }
+                        }
+
+                    }
+                }
+                //
+                Card(elevation = 10.dp, shape = RoundedCornerShape(8.dp)) {
+                    Box(modifier = Modifier.width(160.dp)) {
+                        Column {
+                            Image(
+                                painter = painterResource(id = R.drawable.img_1),
+                                contentDescription = "Popular Coffee",
+                                modifier = Modifier
+                                    .height(180.dp)
+                                    .clip(
+                                        shape = RoundedCornerShape(18.dp)
+                                    ),
+                                contentScale = ContentScale.FillWidth
+                            )
+
+                            // Column for next items under image
+                            Column(modifier = Modifier.padding(start = 10.dp)) {
+                                Text(
+                                    text = "Cold Brew",
+                                    style = TextStyle(
+                                        fontWeight = FontWeight.Bold,
+                                        fontFamily = FontFamily.Monospace
+
+                                    ),
+                                    modifier = Modifier.alpha(0.87f)
+
+                                )
+                                // Next Text
+                                Text(
+                                    text = "Calories - 35",
+                                    style = TextStyle(
+                                        fontSize = 12.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        fontFamily = FontFamily.Monospace
+                                    ),
+                                    modifier = Modifier.alpha(0.4f)
+                                )
+                                Spacer(modifier = Modifier.height(10.dp))
+                                //
+                                Box(
+
+                                    modifier = Modifier
+                                        .height(1.dp)
+                                        .width(130.dp)
+                                        .background(color = Color.Gray)
+                                ) {
+
+                                }
+                                // Spacing
+                                // Spacer(modifier = Modifier.height(10.dp))
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.SpaceBetween
+                                ) {
+                                    Text(
+                                        text = "$13",
+                                        style = TextStyle(
+                                            fontSize = 12.sp,
+                                            fontWeight = FontWeight.Bold,
+                                            fontFamily = FontFamily.Monospace
+                                        ),
+                                        modifier = Modifier.alpha(0.87f)
+                                    )
+                                    Text(
+                                        modifier = Modifier
+                                            .padding(end = 10.dp)
+                                            .alpha(0.87f),
+                                        text = "+",
+                                        style = TextStyle(
+                                            fontSize = 16.sp,
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontFamily = FontFamily.Monospace
+
+                                        )
+                                    )
+                                }
+                            }
+                        }
+
+                    }
+                }
             }
-
-
         }
     }
 }

@@ -83,7 +83,7 @@ fun HomeUI(actions: MainActions) {
                 onValueChange = { text = it },
                 placeholder = {
                     Text(
-                        text = "Carl Sayuran",
+                        text = "Search Groceries",
                         color = platinum
                     )
                 },
@@ -315,7 +315,7 @@ fun HomeUI(actions: MainActions) {
                             color = black,
                         )
                         Text(
-                            text = "Lihat Semua",
+                            text = "View All",
                             fontSize = 14.sp,
                             color = gold,
                         )
@@ -358,14 +358,14 @@ fun HomeUI(actions: MainActions) {
                                     .wrapContentHeight()
                             ) {
                                 Text(
-                                    text = "Labu Kuning",
+                                    text = "Summer Squash",
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 14.sp,
                                     color = black,
                                 )
                                 Spacer(modifier = Modifier.height(4.dp))
                                 Text(
-                                    text = "Cocok untuk memrunkunkan berat badam",
+                                    text = "Suitable for reducing body weight",
                                     fontSize = 12.sp,
                                     color = Color.Gray,
                                 )
@@ -378,7 +378,7 @@ fun HomeUI(actions: MainActions) {
                                     .wrapContentHeight()
                             ) {
                                 Text(
-                                    text = "Rs. 9.60/Kg",
+                                    text = "Ksh. 90.60/Kg",
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 12.sp,
                                     color = gold,

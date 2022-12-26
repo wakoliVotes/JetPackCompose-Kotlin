@@ -40,7 +40,7 @@ fun TitleBar() {
                 text = "Starbucks Coffee",
                 style = TextStyle(
                     fontFamily = FontFamily.Monospace,
-                    fontSize = 22.sp,
+                    fontSize = 30.sp,
                     fontWeight = FontWeight.Bold
 
                 )
