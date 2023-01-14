@@ -22,6 +22,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.vintagecars.R
+import com.example.vintagecars.ui.theme.hueGreen
+import com.example.vintagecars.ui.theme.hueLight
 import com.example.vintagecars.ui.theme.lightBlue
 
 @Preview
@@ -59,13 +61,13 @@ fun CarAndSummary() {
 
         ) {
             Row (
-                modifier = Modifier.background(lightBlue)
+                modifier = Modifier.background(hueGreen)
                     ) {
                 Image(
                     painter = painterResource(id = R.drawable.img),
                     contentDescription = "car image",
                     modifier = Modifier
-                        .width(150.dp)
+                        .width(175.dp)
                         .height(140.dp)
                         .padding(5.dp)
                         .clip(RoundedCornerShape(4.dp, 0.dp)),
@@ -84,7 +86,7 @@ fun CarAndSummary() {
                     )
                     Text(
                         modifier = Modifier
-                            .padding(top = 2.dp, end = 10.dp, bottom = 20.dp),
+                            .padding(top = 2.dp, end = 10.dp, bottom = 30.dp),
                         text = "Name dropped in the James Bond franchise as well as elsewhere in popular culture, its sky-high price has grown an estimated 790 times since it first arrived on the market. Conceptualized by the Italian designer Carrozzeria Touring Superleggera in Milan, this cool old car was always designed to make an entrance. The more time passes, the bigger the entrance promises to be. ",
                         style = TextStyle(
                             fontSize = 10.sp,
@@ -106,7 +108,7 @@ fun CarDetails() {
             .fillMaxWidth()
             .height(50.dp)
             .padding(start = 3.dp,end = 3.dp)
-            .offset(0.dp, (-8).dp)
+            .offset(0.dp, (-24).dp)
     ) {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
